@@ -14,17 +14,22 @@ export default async function Page({params} : {params : {id: string}}){
     }
     return (
         <main>
-            <Breadcrumbs breadcrumbs={[
-             {label : 'Invoices', href : '/dashboard/invoices'},
-                {
-                    label : 'Edit Invoices ',
-                    href : `/dashboard/invoices/${id}/edit`,
-                    active : true,
-               },
-
-            ]}>
-            </Breadcrumbs>
-            <Form invoice={invoice} customers={customers}></Form>
-        </main>
+        <Breadcrumbs
+          breadcrumbs={[
+            { label: 'Invoices', href: '/dashboard/invoices' },
+            {
+              label: 'Create Invoice',
+              href: '/dashboard/invoices/create',
+              active: true,
+            },
+          ]}
+        />
+        <Form customers={customers} invoice={{
+                id: '',
+                customer_id: '',
+                amount: 0,
+                status: 'pending'
+            }} />
+      </main>
     )
 }
