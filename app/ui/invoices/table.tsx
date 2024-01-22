@@ -3,7 +3,9 @@ import { UpdateInvoice, DeleteInvoice } from '@/app/ui/invoices/buttons';
 import InvoiceStatus from '@/app/ui/invoices/status';
 import { formatDateToLocal, formatCurrency } from '@/app/lib/utils';
 import { fetchFilteredInvoices } from '@/app/lib/data';
-
+{
+  /* <Table> is a Server Component that fetches its own data, so you can pass the searchParams prop from the page to the component. */
+}
 export default async function InvoicesTable({
   query,
   currentPage,
